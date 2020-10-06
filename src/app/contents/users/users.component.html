@@ -1,0 +1,76 @@
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title d-inline"> Foydalanuvchilar</h4>
+          <button class="btn d-inline float-right btn-sm btn-info">add new </button>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead class=" text-primary">
+                <th>
+                  id
+                </th>
+                <th>
+                  username
+                </th>
+                <th>
+                  email
+                </th>
+                <th>
+                  created_at
+                </th>
+                <th class="">
+                  updated_at
+                </th>
+                <th class="text-right">
+                  edit
+                </th>
+                <th class="text-right">
+                  delete
+                </th>
+              </thead>
+              
+              <tbody *ngIf="users; else noUsers">
+                
+                <tr *ngFor="let user of users">
+                  <td>
+                    {{user.id}}
+                  </td>
+                  <td>
+                    {{user.username}}
+                  </td>
+                  <td>
+                    {{user.email}}
+                  </td>
+                  <td class="">
+                    {{user.created_at}}
+                  </td>
+                  <td class="">
+                    {{user.updated_at}}
+                  </td>
+                  <td class="text-right">
+                    <button class="btn btn-sm btn-success">edit</button>
+                  </td>
+                  <td class="text-right">
+                    <button class="btn btn-sm btn-danger">delete</button>
+                  </td>
+                </tr>
+
+                
+                
+              </tbody>
+              <ng-template #noUsers>
+                <tbody>
+                  <tr><td class="text-center text-info bold" colspan="7">no users found</td></tr>
+                </tbody>
+                
+              </ng-template>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

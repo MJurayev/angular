@@ -5,28 +5,36 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './admin-sidebar/sidebar.component';
-import { AdminComponent } from './admin/admin.component';
 import { NavbarComponent } from './admin-navbar/navbar.component';
-import { ContentComponent } from './admin-content/content.component';
 import { FooterComponent } from './admin-footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UsersComponent } from './contents/users/users.component';
+import { ProfileComponent } from './contents/profile/profile.component';
+import { AdminsComponent } from './contents/admins/admins.component';
+import { PostsComponent } from './contents/posts/posts.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes :Routes = [
-  {path:'admin', component:AdminComponent},
+  {path:'profile', component:ProfileComponent},
+  {path:'posts', component:PostsComponent},
+  {path:'users', component:UsersComponent},
+  {path:'admins', component:AdminsComponent},
   {path:'**', component:PageNotFoundComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-
-    AdminComponent,
     SidebarComponent,
-    ContentComponent,
     NavbarComponent,
     FooterComponent,
+    UsersComponent,
+    ProfileComponent,
+    AdminsComponent,
+    PostsComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes)

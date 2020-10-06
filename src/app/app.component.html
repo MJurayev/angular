@@ -1,3 +1,17 @@
-<router-outlet>
 
-</router-outlet>
+<div class="wrapper ">
+    <app-sidebar></app-sidebar>
+    <div class="main-panel" id="main-panel">
+        <!-- Navbar -->
+        <app-navbar></app-navbar>
+        <!-- End Navbar -->
+        <div class="panel-header panel-header-sm">
+        </div>
+        <div class="content">
+             <router-outlet></router-outlet>
+            </div>
+         
+        <app-footer></app-footer>
+    </div>
+</div>
+

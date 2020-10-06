@@ -1,0 +1,72 @@
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title d-inline"> Adminstratorlar</h4>
+          <button class="btn d-inline float-right btn-sm btn-info">add new</button>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead class=" text-primary">
+                <th>
+                  id
+                </th>
+                <th>
+                  username
+                </th>
+                <th>
+                  email
+                </th>
+                <th>
+                  created_at
+                </th>
+                <th class="">
+                  updated_at
+                </th>
+                <th class="text-right">
+                  edit
+                </th>
+                <th class="text-right">
+                  delete
+                </th>
+              </thead>
+              <tbody *ngIf="admins; else noAdmins">
+                
+                <tr  *ngFor="let admin of admins">
+                  <td>
+                    {{admin.id}}
+                  </td>
+                  <td>
+                    {{admin.username}}
+                  </td>
+                  <td>
+                    {{admin.email}}
+                  </td>
+                  <td class="">
+                    {{admin.created_at}}
+                  </td>
+                  <td class="">
+                    {{admin.updated_at}}
+                  </td>
+                  <td class="text-right">
+                    <button class="btn btn-sm btn-success">edit</button>
+                  </td>
+                  <td class="text-right">
+                    <button class="btn btn-sm btn-danger">delete</button>
+                  </td>
+                </tr>
+              </tbody>
+              <ng-template #noAdmins>
+                <tbody>
+                  <tr><td class="text-center text-info bold" colspan="7">no admins found</td></tr>
+                </tbody>
+                
+              </ng-template>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
